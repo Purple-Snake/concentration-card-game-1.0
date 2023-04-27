@@ -1,0 +1,79 @@
+:root {
+    --darkBlue: #18587B;
+    --white: #fff;
+    --black: #000;
+}
+
+body {
+    background: linear-gradient(90deg, #347975 0%, #265D7C 100%);
+}
+
+.navbar {
+    display: flex;
+    justify-content: end;
+}
+
+.go-back {
+    color: #fff;
+}
+
+.container {
+    margin-top: 5rem;
+}
+
+.sign-in {
+    border-right: 2px solid #000;
+    transition: 1s;
+}
+
+.log-in {
+    border-left: 2px solid #000;
+    transition: 1s;
+}
+
+.sukurti-btn, .prisijungti-btn {
+    background-color: var(--darkBlue);
+    border-color: var(--darkBlue);
+    color: var(--white);
+
+}
+
+.form-control:focus + label {
+  color: black;
+}
+
+.form-floating {
+    width: 20rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container {
+    text-align: center;
+}
+
+form div {
+    margin: 1rem;
+}
+
+input[type="text"], input[type="password"], input[type="email"]{
+    background-color: var(--darkBlue);
+    border-color: var(--darkBlue);
+}
+
+label {
+    color: var(--white);
+}
+
+#show-password-sign-in, #show-password-log-in {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translate(0, -50%);
+    z-index: 1;
+  } 
+
+  .nav-item{
+    color:#fff
+  }

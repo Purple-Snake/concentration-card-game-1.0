@@ -1,0 +1,77 @@
+body {
+  background: linear-gradient(90deg, #347975 0%, #265d7c 100%);
+}
+
+.navbar {
+  display: flex;
+  justify-content: end;
+}
+
+.log-in, .log-out, .welcome-sign {
+  color: #fff;
+}
+
+.welcome-sign {
+  text-align: center;
+  margin: auto;
+  padding-right: 1rem;
+}
+
+div {
+  margin-top: 1%;
+}
+
+#start-button {
+  background-color: #18587b;
+  border-color: #18587b;
+  border-radius: 35px;
+  width: 40%;
+  padding: 3%;
+  font-size: 2.5rem;
+}
+
+.time-button,
+.card-pair-button {
+  width: 164px;
+  height: 85px;
+}
+
+#easy {
+  background-color: #89d476;
+  border-color: #89d476;
+  color: #000;
+  border-radius: 35px;
+  font-size: 2.5rem;
+}
+
+#medium {
+  background-color: #cbdc86;
+  border-color: #cbdc86;
+  color: #000;
+  border-radius: 35px;
+  font-size: 2.5rem;
+}
+
+#hard {
+  background-color: #e87676;
+  border-color: #e87676;
+  color: #000;
+  border-radius: 35px;
+  font-size: 2.5rem;
+}
+
+.record {
+  background-color: #18587b;
+  color: #fff;
+  padding: 5px;
+  border-radius: 35px 35px 0px 0px;
+  font-size: xx-large;
+  width: 20rem;
+}
+
+.score {
+  background-color: #d9d9d9;
+  border-radius: 0px 0px 35px 35px;
+  font-size: xx-large;
+  padding: 5px;
+}

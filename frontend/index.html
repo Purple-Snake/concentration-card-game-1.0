@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koncentracijos lavinimo žaidimas</title>
+    <script src="https://kit.fontawesome.com/588567980a.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main_page.css">
+    <script defer src="js/main_page_script.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar bg-dark">
+        <ul class="nav justify-content-end" id="nav-ul">
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="text-center">
+            <a id="start">
+                <button type="button" class="btn btn-primary btn-lg" id="start-button">Pradėti</button>
+            </a>
+        </div>
+        <div class="text-center">
+            <h1>Laikas</h1>
+            <div class="btn-group me-2 time-button" role="group" aria-label="First group">
+                <button type="button" class="btn btn-primary" id="easy">120</button>
+            </div>
+            <div class="btn-group me-2 time-button" role="group" aria-label="First group">
+                <button type="button" class="btn btn-primary" id="medium">90</button>
+            </div>
+            <div class="btn-group me-2 time-button" role="group" aria-label="First group">
+                <button type="button" class="btn btn-primary" id="hard">60</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center">
+        <h1>Kortų skaičius</h1>
+        <div class="text-center">
+            <div class="btn-group me-2 card-pair-button" role="group" aria-label="First group">
+                <button type="button" class="btn btn-primary" id="easy">16</button>
+            </div>
+            <div class="btn-group me-2 card-pair-button" role="group" aria-label="First group">
+                <button type="button" class="btn btn-primary" id="medium">24</button>
+            </div>
+            <div class="btn-group me-2 card-pair-button" role="group" aria-label="First group">
+                <button type="button" class="btn btn-primary" id="hard">32</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex text-center" id="user-highscore-div">
+    </div>
+    </div>
+    
+    <script>
+        let time = 60; //sec
+        const gameStart = document.getElementById("start");
+        const difficulty = document.getElementsByClassName("time-button");
+
+        for (let index = 0; index < difficulty.length; index++) {
+            const element = difficulty[index];
+            element.onclick = () => time = element.children[0].innerHTML;  
+        };
+        
+      
+        let cardPairs = 16;
+        const cardPairNumber = document.getElementsByClassName("card-pair-button");
+
+        for (let index = 0; index < cardPairNumber.length; index++) {
+            const element = cardPairNumber[index];
+            element.onclick = () => cardPairs = element.children[0].innerHTML;
+        };
+
+     
+        gameStart.onclick = () => location.assign(`game.html?time=${time}&pairnumber=${cardPairs}`);
+    </script>
+    </body>
+
+</html>
