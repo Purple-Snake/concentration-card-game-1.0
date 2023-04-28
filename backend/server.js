@@ -3,8 +3,6 @@ const dotenv = require("dotenv")
 
 dotenv.config()
 
-// const mongoURI = "mongodb+srv://Purple:VgepOb3iPGnVIx9P@cluster0.95zsl1i.mongodb.net/users?retryWrites=true&w=majority";
-
 const app = require("./app");
 
 // DB Connection
