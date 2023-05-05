@@ -49,12 +49,12 @@ exports.login = async (req, res) => {
 
     // validate
     if (!userName || !password) {
-      return res.status(400).send("Please enter all required fields.");
+      return res.status(400).json({message: "Please enter all required fields."});
     }
 
     const existingUser = await User.findOne({ userName });
     if (!existingUser) {
-      return res.status(401).send("Wrong username or password.");
+      return res.status(401).json({message: "Neteisingas vartotjojo vardas arba slaptažodis."});
     }
 
     const passwordCorrect = await bcrypt.compare(
@@ -62,13 +62,13 @@ exports.login = async (req, res) => {
       existingUser.password
     );
     if (!passwordCorrect) {
-      return res.status(401).send("Wrong username or password.");
+      return res.status(401).json({ message: "Wrong username or password."});
     }
 
     res
       .send(`${existingUser.userName}.${existingUser.highScore}`);
   } catch {
-    res.status(500).send("Logging up failed, please try again later.");
+    res.status(500).json({message: "Prisijungti nepavyko, bandykite vėliau."});
   }
 };
 
