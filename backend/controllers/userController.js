@@ -49,7 +49,7 @@ exports.login = async (req, res) => {
 
     // validate
     if (!userName || !password) {
-      return res.status(400).json({message: "Please enter all required fields."});
+      return res.status(400).json({message: "Įveskite visus privalomus laukus."});
     }
 
     const existingUser = await User.findOne({ userName });
@@ -62,7 +62,7 @@ exports.login = async (req, res) => {
       existingUser.password
     );
     if (!passwordCorrect) {
-      return res.status(401).json({ message: "Wrong username or password."});
+      return res.status(401).json({ message: "Neteisingas vartotjojo vardas arba slaptažodis."});
     }
 
     res
