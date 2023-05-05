@@ -31,6 +31,6 @@ window.addEventListener("load", () => {
     document.getElementById(
       "user-highscore"
     ).innerHTML = `${sessionStorage.getItem("highScore")}`;
-  //   
+  
   }
 });

@@ -34,8 +34,15 @@ function loginUser(endpoint, dataObject) {
   };
 
   fetch(endpoint, options)
-    .then((response) => response.text())
-    .then((data) => {
+    .then((response) => {
+
+    if (response.status === 200) {
+      return response.text();
+    } else {
+      throw new Error(response.message);
+    }
+  }
+    ).then((data) => {
       const dataArray = data.split(".")
       
       sessionStorage.setItem("userName", dataArray[0]);
@@ -43,7 +50,7 @@ function loginUser(endpoint, dataObject) {
       window.location.href = "http://127.0.0.1:5500/frontend/index.html";
     })
     .catch((err) => {
-      alert(err);
+      alert(`${err} kažkas nepavyko, bandykite dar kartą.`);
     });
 }
 

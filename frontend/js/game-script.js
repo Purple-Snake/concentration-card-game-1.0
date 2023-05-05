@@ -2,7 +2,7 @@
 
 const urlParams = new URLSearchParams(window.location.search);
 
-const pairNumber = parseInt(urlParams.get("pairnumber"));
+const setCardNumber = parseInt(urlParams.get("cardNumber"));
 
 const gameOverModal = document.getElementById("game-over-modal");
 const modalScore = document.getElementById("modal-score");
@@ -81,11 +81,11 @@ function changeRoundCounter() {
 }
 
 function generateHTMLForBoardSquares() {
-  const numberOfSquares = pairNumber;
+  const numberOfSquares = setCardNumber;
   let squaresHTML = "";
 
   for (let i = 0; i < numberOfSquares; i++) {
-    if (pairNumber == 16) {
+    if (setCardNumber == 16) {
       squaresHTML += `
 	    <div class="col-3 board-square card-style-16">
 	        <div class="face-container">
@@ -94,7 +94,7 @@ function generateHTMLForBoardSquares() {
 	        </div>
 	    </div>`;
     }
-    if (pairNumber == 24) {
+    if (setCardNumber == 24) {
       squaresHTML += `
 	    <div class="col-3 board-square card-style-24">
 	        <div class="face-container">
@@ -103,7 +103,7 @@ function generateHTMLForBoardSquares() {
 	        </div>
 	    </div>`;
     }
-    if (pairNumber == 32) {
+    if (setCardNumber == 32) {
       squaresHTML += `
 	    <div class="col-3 board-square card-style-32">
 	        <div class="face-container">
@@ -113,12 +113,12 @@ function generateHTMLForBoardSquares() {
 	    </div>`;
     }
   }
-  if (pairNumber == 24) {
+  if (setCardNumber == 24) {
     let test = document.getElementsByClassName("test")[0];
     test.classList.toggle("nested-container-16");
     test.classList.toggle("nested-container-24");
   }
-  if (pairNumber == 32) {
+  if (setCardNumber == 32) {
     let test = document.getElementsByClassName("test")[0];
     test.classList.toggle("nested-container-16");
     test.classList.toggle("nested-container-32");
@@ -134,7 +134,7 @@ function generateColorPairs() {
   if (colorPairs.length > 0) {
     return colorPairs;
   } else {
-    for (let i = 0; i < pairNumber / 2; i++) {
+    for (let i = 0; i < setCardNumber / 2; i++) {
       colorPairs.push("color-" + i);
       colorPairs.push("color-" + i);
     }
