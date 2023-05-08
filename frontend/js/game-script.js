@@ -2,7 +2,7 @@
 
 const urlParams = new URLSearchParams(window.location.search);
 
-const setCardNumber = parseInt(urlParams.get("cardNumber"));
+const setCardNumber = parseInt(urlParams.get("pairnumber"));
 
 const gameOverModal = document.getElementById("game-over-modal");
 const modalScore = document.getElementById("modal-score");
